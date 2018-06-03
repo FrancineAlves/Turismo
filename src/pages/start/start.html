@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Mochileiros!
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div id="topButtons">
+    <button block ion-button (click)="signIn()" item-left>Entrar</button>
+
+    <button block ion-button (click)="register()" item-left>Registrar uma conta</button>
+
+    <button ion-button block icon-left color="danger" margin-top (click)="signInWithGoogle()">
+      <ion-icon name="logo-google"></ion-icon>
+      Entrar com o Google
+    </button>
+
+    <button ion-button block icon-left color="facebook" margin-top (click)="signInWithFacebook()">
+      <ion-icon name="logo-facebook"></ion-icon>
+      Entrar com o Facebook
+    </button>
+
+    <button ion-button block icon-left color="twitter" margin-top (click)="signInWithTwitter()">
+      <ion-icon name="logo-twitter"></ion-icon>
+      Entrar com o Twitter
+    </button>
+  </div>
+</ion-content>

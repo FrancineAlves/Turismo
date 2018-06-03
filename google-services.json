@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "667959549969",
+    "firebase_url": "https://mochileiros-cacac.firebaseio.com",
+    "project_id": "mochileiros-cacac",
+    "storage_bucket": "mochileiros-cacac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667959549969:android:764d2cb7da3280eb",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667959549969-8lv3b5i97h0gb1lvms8pghtdpp5cade3.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "667959549969-8lv3b5i97h0gb1lvms8pghtdpp5cade3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7JkzMqImlfMeO_Y8u0Ux0Syh3JBtmSPw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

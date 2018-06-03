@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Mochileiros</ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content padding>
+
+<div #map id="map"></div>
+
+<ion-grid>
+    <ion-row>
+      <ion-col>
+          <div id="latclicked" type=number #latclicked>Latitude</div>
+      </ion-col>
+      <ion-col>
+          <div id="longclicked" type=number #longclicked>Longitude</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+<button ion-button block (click)="navigateAddPontoTuristico()">Add Ponto Turístico</button>
+
+</ion-content>
