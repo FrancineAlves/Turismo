@@ -8,17 +8,6 @@
 
 <div #map id="map"></div>
 
-<ion-grid>
-    <ion-row>
-      <ion-col>
-          <div id="latclicked" type=number #latclicked>Latitude</div>
-      </ion-col>
-      <ion-col>
-          <div id="longclicked" type=number #longclicked>Longitude</div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-<button ion-button block (click)="navigateAddPontoTuristico()">Add Ponto Turístico</button>
+<button ion-button block (click)="navigateAddPontoTuristico()" [disabled]="!validaAddPonto()" >Add Ponto Turístico</button>
 
 </ion-content>
