@@ -15,13 +15,13 @@ export class HomePage {
   pontoTuristico: Observable<any>;
   map: any;
   latLng: any;
+  latitude: any;
+  longitude: any;
   
   constructor(public navCtrl: NavController, private provider: PontoTuristicoProvider) { 
 
-  this.pontoTuristico = this.provider.getAll();
+    this.pontoTuristico = this.provider.getAll();
 
-  console.log(this.pontoTuristico);
-  
   }
 
   ionViewDidLoad(){
@@ -29,21 +29,22 @@ export class HomePage {
     var options = {
       zoom:8,
       center:{lat:-26.4751481,lng:-49.0266867},
-      disableDoubleClickZoom: true // disable the default map zoom on double click
     }
 
     var map = new google.maps.Map(document.getElementById('map'), options);
     
     this.showPontoTuristico(map);
 
+    var save=this;
+
     // Update lat/long value of div when anywhere in the map is clicked    
     google.maps.event.addListener(map,'click',function(event) {                
-        document.getElementById('latclicked').innerHTML = event.latLng.lat();
-        document.getElementById('longclicked').innerHTML =  event.latLng.lng();
-      
+        save.latitude=event.latLng.lat();
+        save.longitude=event.latLng.lng();
+        
         addMarker({coords:event.latLng});
     });
-    
+  
       // Add Marker Function
       function addMarker(props){
         var marker = new google.maps.Marker({
@@ -72,19 +73,12 @@ export class HomePage {
     }
 
   navigateAddPontoTuristico(){
-   
-    var latitude = document.getElementById("latclicked").innerText;
-    var longitude = document.getElementById("longclicked").innerText;
-    
-    // Navegar o usuário para a AddPontoTuristicoPage
-    this.navCtrl.push(AddPontoTuristicoPage, {latitude: latitude, longitude: longitude});
+    this.navCtrl.push(AddPontoTuristicoPage, {latitude: this.latitude, longitude: this.longitude});
   }
 
   validaAddPonto(){
-    var latitude = document.getElementById("latclicked").innerText;
-
-    if (latitude == "Latitude") return false
-    return true
+    if (this.latitude != undefined) return true
+    return false
   }
 
   showPontoTuristico(map){
